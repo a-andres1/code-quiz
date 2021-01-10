@@ -43,8 +43,15 @@ function countdown() {
 
 
   // Quiz
+  var card = document.getElementById("card")
   var question = document.getElementById("question");
   var ans1 = document.getElementById("answer1");
   var ans2 = document.getElementById("answer2");
   var ans3 = document.getElementById("answer3");
   var ans4 = document.getElementById("answer4");
+
+  function hideCard() {
+    document.getElementById("card").style.display = "none";
+  }
+
+  hideCard();
