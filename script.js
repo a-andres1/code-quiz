@@ -34,9 +34,3 @@ function countdown() {
   }
 
   countdown();
-  
-
-var timeLeft = 240
-var timeLeftEl = document.getElementById("timeLeft");
-
-timeLeftEl.innerHTML= timeLeft
