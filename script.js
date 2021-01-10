@@ -45,13 +45,13 @@ function countdown() {
 
 
   document.getElementById("welcomemessage").style.textAlign = "center";
-  document.getElementById("startbtn").style.textAlign = "center";
 
 
   header.textContent = "Coding Quiz";
   message.textContent = "Try to answer the following javasript questions within the given time. Any incorrect answers will take 5 seconds off your remaining time."
   welcomeBanner.appendChild(header);
   welcomeBanner.appendChild(message);
+  welcomeBanner.appendChild(startBtn);
 
 
 
