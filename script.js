@@ -88,8 +88,10 @@ function displayCard() {
 
 // fuction that populates the quiz card
 
-// High scores page
+// High scores initial input
 var initialInput = document.getElementById("initials");
 initialInput.style.display = "none"
+
+
 
 
