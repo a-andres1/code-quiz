@@ -39,8 +39,20 @@ function countdown() {
   // Welcome Page
   var welcomeBanner = document.getElementById("welcomemessage");
   var startBtn = document.getElementById("startbtn");
+  var header = document.createElement("h1");
+  var message = document.createElement("p");
+  
+
 
   document.getElementById("welcomemessage").style.textAlign = "center";
+  document.getElementById("startbtn").style.textAlign = "center";
+
+
+  header.textContent = "Coding Quiz";
+  message.textContent = "Try to answer the following javasript questions within the given time. Any incorrect answers will take 5 seconds off your remaining time."
+  welcomeBanner.appendChild(header);
+  welcomeBanner.appendChild(message);
+
 
 
 
