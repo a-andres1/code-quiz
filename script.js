@@ -37,5 +37,14 @@ function countdown() {
 
 
   // Welcome Page
-  var welcomeBanner = document.getElementById("welcomemessage")
-  var startBtn = document.getElementById("startbtn")
+  var welcomeBanner = document.getElementById("welcomemessage");
+  var startBtn = document.getElementById("startbtn");
+
+
+
+  // Quiz
+  var question = document.getElementById("question");
+  var ans1 = document.getElementById("answer1");
+  var ans2 = document.getElementById("answer2");
+  var ans3 = document.getElementById("answer3");
+  var ans4 = document.getElementById("answer4");
