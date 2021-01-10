@@ -34,3 +34,8 @@ function countdown() {
   }
 
   countdown();
+
+
+  // Welcome Page
+  var welcomeBanner = document.getElementById("welcomemessage")
+  var startBtn = document.getElementById("startbtn")
