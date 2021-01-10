@@ -1,7 +1,4 @@
 
-// Variables
-
-
 // Countdown timer
 function countdown() {
     var timeLeft = 240
@@ -33,7 +30,7 @@ function countdown() {
     }, 1000);
   }
 
-  countdown();
+  // countdown();
 
 
   // Welcome Page
@@ -43,7 +40,6 @@ function countdown() {
   var message = document.createElement("p");
   
 
-
   document.getElementById("welcomemessage").style.textAlign = "center";
 
 
@@ -52,6 +48,9 @@ function countdown() {
   welcomeBanner.appendChild(header);
   welcomeBanner.appendChild(message);
   welcomeBanner.appendChild(startBtn);
+
+  // add event listener to Start button
+  startBtn.addEventListener("click", countdown);
 
 
 
