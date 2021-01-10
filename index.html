@@ -32,8 +32,12 @@
     </nav>
 
     <!-- Div for dynamic JS welcome page  -->
-    <div id=welcomemessage>Welcome div</div>
-    <button id="startbtn" type="button" class="btn btn-light">Light</button>
+    <div id=welcomemessage>
+        Welcome div
+        <br>
+        <button id="startbtn" type="button" class="btn btn-light">Light</button>
+    </div>
+
 
 
     <!-- Quiz divs -->
@@ -43,8 +47,8 @@
             <div class="col-md-3"></div>
             <!-- Column for the quiz card -->
             <div class="col-md-6">
-                <div class="card">
-                    <div id="card" class="card-body">
+                <div id="card" class="card">
+                    <div class="card-body">
                         <!-- Questions will go here -->
                         <h5 id="question" class="card-title">Question</h5>
                         <!-- Answer buttons -->
@@ -68,7 +72,7 @@
         crossorigin="anonymous"></script>
 
         <!-- Link for my js page -->
-        <script src="script.js" defer></script>
+        <script src="script.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

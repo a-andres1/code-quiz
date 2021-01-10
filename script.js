@@ -40,6 +40,8 @@ function countdown() {
   var welcomeBanner = document.getElementById("welcomemessage");
   var startBtn = document.getElementById("startbtn");
 
+  document.getElementById("welcomemessage").style.textAlign = "center";
+
 
 
   // Quiz
