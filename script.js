@@ -15,7 +15,6 @@ function countdown() {
 
     if (timeLeft === 1) {
       timeLeftEl.innerHTML = (timeLeft--) + " second left";
-
     }
 
     else if (timeLeft > 0) {
@@ -54,7 +53,7 @@ welcomeBanner.appendChild(startBtn);
 
 // add event listeners for Start button
 
-startBtn.addEventListener("click", function() {
+startBtn.addEventListener("click", function () {
   displayCard();
   countdown();
 })
@@ -75,14 +74,22 @@ card.style.display = "none";
 
 // fuction to display the Quiz card on click
 function displayCard() {
-  console.log("Displaycard function ran")
+  console.log("Displaycard function ran");
   // once the start button is clicked, sets the card to its initial state
   if (card.style.display === "none") {
     card.style.display = "initial";
   }
-// if start button is clicked again, will rehide the card
+  // if start button is clicked again, will rehide the card
   else {
-    card.style.display = "none"
+    card.style.display = "none";
   }
 }
+
+
+// fuction that populates the quiz card
+
+// High scores page
+var initialInput = document.getElementById("initials");
+initialInput.style.display = "none"
+
 
