@@ -56,6 +56,7 @@ welcomeBanner.appendChild(startBtn);
 startBtn.addEventListener("click", function () {
   displayCard();
   countdown();
+  codeQuiz();
 })
 
 
@@ -87,6 +88,13 @@ function displayCard() {
 
 
 // fuction that populates the quiz card
+
+function codeQuiz() {
+  welcomeBanner.style.display = "none";
+}
+
+
+
 
 // High scores initial input
 var initialInput = document.getElementById("initials");
