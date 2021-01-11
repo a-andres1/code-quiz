@@ -95,7 +95,6 @@ function codeQuiz() {
 
 
 
-
 // High scores initial input
 var initialInput = document.getElementById("initials");
 initialInput.style.display = "none"
