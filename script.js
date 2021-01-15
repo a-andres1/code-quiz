@@ -68,7 +68,7 @@ var ans1 = document.getElementById("answer1");
 var ans2 = document.getElementById("answer2");
 var ans3 = document.getElementById("answer3");
 var ans4 = document.getElementById("answer4");
-var question = document.getElementById("question");
+var questionDiv = document.getElementById("question");
 
 //  initially hides card
 card.style.display = "none";
@@ -86,13 +86,26 @@ function displayCard() {
   }
 }
 
-
 // fuction that populates the quiz card
 
 function codeQuiz() {
   welcomeBanner.style.display = "none";
+  
+  var currentQuestion = questions[0].question;
+  questionDiv.textContent = currentQuestion;
+  var currentAns1 = questions[0].answers[0];
+  ans1.textContent = currentAns1
+  var currentAns2 = questions[0].answers[1];
+  ans2.textContent = currentAns2
+  var currentAns3 = questions[0].answers[2];
+  ans3.textContent = currentAns3
+  var currentAns4 = questions[0].answers[3];
+  ans4.textContent = currentAns4
+ 
 }
 
+
+// clearTimeout() <- to stop timer
 
 
 // High scores initial input
@@ -100,5 +113,88 @@ var initialInput = document.getElementById("initials");
 initialInput.style.display = "none"
 
 
+// Arrays for questions
+
+// const questionArray = [ , "What is the correct syntax to referring to an external script called \"sleepy.js\"?", "Which of the following type of variable is visible everywhere in your JavaScript code?", "Which built-in method returns the string representation of the number's value?", "Which of the following function of String object returns the calling string value converted to lower case?", "What is the name for the notation used to type in JavaScript?"]
+// const answer1Array = [ , "<script src=\"sleepy.js\">", "global constiable", "toValue()", "toLocaleLowerCase()", "HorseyCase"]
+// const answer2Array = [ , "<script href=\"sleepy.js\">", "local constiable", "toNumber()", "toLowerCase()", "DonkeyScript"]
+// const answer3Array = [ "box(\"I'm tired.\")", "<script ref=\"sleepy.js\">", "None of the above", "toString()", "toString(),", "CamelCase"]
+// const answer4Array = [ "alert(\"I'm tired.\")", "<script rel=\"sleepy.js\">", "All of the above", "None of the above", "substring()", "PonyType"]
+
+// questions 1-3 attributed to geeksforgeeks, questions 4-6 attributed to tutorialspoint.com, I came up with 7, you're welcome
+
+var questions =[ 
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "Which of the following is the correct syntax to display the text \"I'm tired.\" in an alert box?",
+  answers: [
+    "alertbox(\"I'm tired.\")",
+    "message(\"I'm tired.\"",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+  {
+  question: "What is the tag under which one can write Javascript?",
+  answers: [
+       "<javascript>",
+       "<scrapt>",
+       "<script>",
+       "<javascripts>",
+  ],
+  correctAnswer: "<script>"
+},
+]
 
 
+// get question to display on page 
