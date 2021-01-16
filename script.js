@@ -70,6 +70,7 @@ var ans3 = document.getElementById("answer3");
 var ans4 = document.getElementById("answer4");
 var questionDiv = document.getElementById("question");
 
+
 //  initially hides card
 card.style.display = "none";
 
@@ -89,8 +90,22 @@ function displayCard() {
 // fuction that populates the quiz card
 
 function codeQuiz() {
+  // hides welcome screen
   welcomeBanner.style.display = "none";
-  
+
+  ans1.addEventListener("click", function(){
+    console.log((this).textContent);
+  });
+  ans2.addEventListener("click", function(){
+    console.log((this).textContent);
+  });
+  ans3.addEventListener("click", function(){
+    console.log((this).textContent);
+  });
+  ans4.addEventListener("click", function(){
+    console.log((this).textContent);
+  });
+
   var currentQuestion = questions[0].question;
   questionDiv.textContent = currentQuestion;
   var currentAns1 = questions[0].answers[0];
