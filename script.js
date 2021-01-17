@@ -1,5 +1,5 @@
 // global indexer
-var gindex = 0;
+
 
 // Countdown timer
 function countdown() {
@@ -8,12 +8,12 @@ function countdown() {
 
   timeLeftEl.innerHTML = timeLeft
 
-  console.log(timeLeftEl)
-  console.log(timeLeft)
+  // console.log(timeLeftEl)
+  // console.log(timeLeft)
 
   var timerInterval = setInterval(function () {
 
-    console.log(timeLeft)
+    // console.log(timeLeft)
 
     if (timeLeft === 1) {
       timeLeftEl.innerHTML = (timeLeft--) + " second left";
@@ -72,6 +72,7 @@ var ans2 = document.getElementById("answer2");
 var ans3 = document.getElementById("answer3");
 var ans4 = document.getElementById("answer4");
 var questionDiv = document.getElementById("question");
+var ansbtns = document.getElementsByClassName("abtn");
 
 
 
@@ -91,134 +92,89 @@ function displayCard() {
   }
 }
 
+// hides welcome screen
 function hideWelcome() {
   welcomeBanner.style.display = "none";
 }
 
 // fuction that populates the quiz card
-
+var gindex = 0;
 function codeQuiz() {
 
+  
+  // compare to the correct answer - wrong, take away 5 seconds
+  // display the next question - global indexer ++ - gindexer
+  // increment when you click these buttons. 
+  // event.target? 
+  // needs to call codequiz() again
 
   var currentQuestion = questions[gindex].question;
-  questionDiv.textContent = currentQuestion;
+  questionDiv.innerHTML = currentQuestion;
   var currentAns1 = questions[gindex].answers[0];
-  ans1.textContent = currentAns1
+  ans1.innerHTML = currentAns1
   var currentAns2 = questions[gindex].answers[1];
-  ans2.textContent = currentAns2
+  ans2.innerHTML = currentAns2
   var currentAns3 = questions[gindex].answers[2];
-  ans3.textContent = currentAns3
+  ans3.innerHTML = currentAns3
   var currentAns4 = questions[gindex].answers[3];
-  ans4.textContent = currentAns4
-  // hides welcome screen
-
-
-  //   // Answer button click listener
-  //   // query all the buttons
-  //   document.querySelectorAll('.abtn').forEach(item => {
-  //     // creates an array
-  //     // adds an event listener to each button you create 
-  //     item.addEventListener('click', event => {
-  //       // global indexer ++ - this will progress through an array representes your question. - go at the top of my script. 
-  //         //handle click
-  //         // answerSelected(item, item.getAttribute("data-array"));
-  //         console.log((this).textContent);
-  //     })
-  // })
-
+  ans4.innerHTML = currentAns4
 
   ans1.addEventListener("click", function () {
     console.log((this).textContent);
 
     if ((this).textContent == questions[gindex].correctAnswer) {
-
-      gindex++
-      codeQuiz();
-      console.log("if");
-
+      nextQuestion();
     }
     else {
       timeLeft -= 5;
-      console.log(questions[gindex].correctAnswer)
-      gindex++
-      codeQuiz();
+      nextQuestion();
       console.log("else");
-
     }
-
-    // compare to the correct answer - wrong, take away 5 seconds
-    // display the next question - global indexer ++ - gindexer
-    // increment when you click these buttons. 
-    // event.target? 
-    // needs to call codequiz() again
   });
+
   ans2.addEventListener("click", function () {
     console.log((this).textContent);
 
     if ((this).textContent == questions[gindex].correctAnswer) {
-      gindex++
-
-      codeQuiz();
-      console.log("if");
-
+      nextQuestion();
     }
     else {
       timeLeft -= 5;
-      console.log(questions[gindex].correctAnswer)
-      gindex++
-      codeQuiz();
-      console.log("else");
-
+      nextQuestion();
     }
   });
+
   ans3.addEventListener("click", function () {
     console.log((this).textContent);
 
     if ((this).textContent == questions[gindex].correctAnswer) {
-
-      gindex++
-      codeQuiz();
-      console.log("if");
-
+      nextQuestion();
     }
     else {
       timeLeft -= 5;
-      console.log(questions[gindex].correctAnswer)
-      gindex++
-      codeQuiz();
-      console.log("else");
-
+      nextQuestion();
     }
   });
   ans4.addEventListener("click", function () {
     console.log((this).textContent);
 
     if ((this).textContent == questions[gindex].correctAnswer) {
-
-      gindex++
-      codeQuiz();
-      console.log("if");
-
+      nextQuestion();
     }
     else {
       timeLeft -= 5;
-      console.log(questions[gindex].correctAnswer)
-      gindex++
-      codeQuiz();
-      console.log("else");
-
+      nextQuestion();
     }
-
-
   });
 
 
-
   console.log("gindex: " + gindex);
+}
 
-
-
-  // i++
+function nextQuestion() {
+  gindex++;
+  codeQuiz();
+  console.log("next question called");
 }
 
 
@@ -229,14 +185,7 @@ function codeQuiz() {
 
 // High scores initial input
 var initialInput = document.getElementById("initials");
-initialInput.style.display = "none"
-
-
-// Arrays for questions
-
-
-
-
+initialInput.style.display = "none";
 
 // questions 1-3 attributed to geeksforgeeks, questions 4-6 attributed to tutorialspoint.com, I came up with 7, you're welcome
 
@@ -244,10 +193,10 @@ var questions = [
   {
     question: "What is the tag under which one can write Javascript?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "javascript",
+      "scrapt",
+      "script",
+      "javascripts",
     ],
     correctAnswer: "<script>"
   },
@@ -262,12 +211,12 @@ var questions = [
     correctAnswer: "alert(\"I'm tired.\")",
   },
   {
-    question: "What is the correct syntax to referring to an external script called \"sleepy.js\"?",
+    question: "What is the correct syntax to refer to an external script called \"sleepy.js\"?",
     answers: [
-      "<script src=\"sleepy.js\">",
-      "<script href=\"sleepy.js\">",
-      "<script ref=\"sleepy.js\">",
-      "<script rel=\"sleepy.js\">",
+      "script src=\"sleepy.js\"",
+      "script href=\"sleepy.js\"",
+      "script ref=\"sleepy.js\"",
+      "script rel=\"sleepy.js\"",
     ],
     correctAnswer: "<script src=\"sleepy.js\">",
   },
