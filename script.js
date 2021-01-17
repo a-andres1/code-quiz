@@ -209,9 +209,9 @@ function codeQuiz() {
 
     }
 
-    
+
   });
- 
+
 
 
   console.log("gindex: " + gindex);
@@ -234,11 +234,9 @@ initialInput.style.display = "none"
 
 // Arrays for questions
 
-// const questionArray = [ , "What is the correct syntax to referring to an external script called \"sleepy.js\"?", "Which of the following type of variable is visible everywhere in your JavaScript code?", "Which built-in method returns the string representation of the number's value?", "Which of the following function of String object returns the calling string value converted to lower case?", "What is the name for the notation used to type in JavaScript?"]
-// const answer1Array = [ , "<script src=\"sleepy.js\">", "global constiable", "toValue()", "toLocaleLowerCase()", "HorseyCase"]
-// const answer2Array = [ , "<script href=\"sleepy.js\">", "local constiable", "toNumber()", "toLowerCase()", "DonkeyScript"]
-// const answer3Array = [, "<script ref=\"sleepy.js\">", "None of the above", "toString()", "toString(),", "CamelCase"]
-// const answer4Array = [  "<script rel=\"sleepy.js\">", "All of the above", "None of the above", "substring()", "PonyType"]
+
+
+
 
 // questions 1-3 attributed to geeksforgeeks, questions 4-6 attributed to tutorialspoint.com, I came up with 7, you're welcome
 
@@ -264,52 +262,52 @@ var questions = [
     correctAnswer: "alert(\"I'm tired.\")",
   },
   {
-    question: "question 2",
+    question: "What is the correct syntax to referring to an external script called \"sleepy.js\"?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "<script src=\"sleepy.js\">",
+      "<script href=\"sleepy.js\">",
+      "<script ref=\"sleepy.js\">",
+      "<script rel=\"sleepy.js\">",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "<script src=\"sleepy.js\">",
   },
   {
-    question: "question 3",
+    question: "Which of the following type of variable is visible everywhere in your JavaScript code?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "global constiable",
+      "local constiable",
+      "None of the above",
+      "All of the above",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "global constiable",
   },
   {
-    question: "question 4",
+    question: "Which built-in method returns the string representation of the number's value?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "toValue()",
+      "toNumber()",
+      "toString()",
+      "None of the above",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "toString()",
   },
   {
-    question: "question 5",
+    question: "Which of the following function of String object returns the calling string value converted to lower case?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "toLocaleLowerCase()",
+      "toLowerCase()",
+      "toString(),",
+      "substring()",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "toLowerCase()",
   },
   {
-    question: "question 6",
+    question: "What is the name for the notation used to type in JavaScript?",
     answers: [
-      "<javascript>",
-      "<scrapt>",
-      "<script>",
-      "<javascripts>",
+      "HorseyCase",
+      "DonkeyScript",
+      "CamelCase",
+      "PonyType",
     ],
     correctAnswer: "<script>"
   },
