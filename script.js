@@ -59,7 +59,7 @@ startBtn.addEventListener("click", function () {
   hideWelcome();
   displayCard();
   countdown();
-  codeQuiz();
+  codeQuiz(count);
 })
 
 
@@ -73,121 +73,7 @@ var ans3 = document.getElementById("answer3");
 var ans4 = document.getElementById("answer4");
 var questionDiv = document.getElementById("question");
 var ansbtns = document.getElementsByClassName("abtn");
-
-
-
-//  initially hides card
-card.style.display = "none";
-
-// fuction to display the Quiz card on click
-function displayCard() {
-  console.log("Displaycard function ran");
-  // once the start button is clicked, sets the card to its initial state
-  if (card.style.display === "none") {
-    card.style.display = "initial";
-  }
-  // if start button is clicked again, will rehide the card
-  else {
-    card.style.display = "none";
-  }
-}
-
-// hides welcome screen
-function hideWelcome() {
-  welcomeBanner.style.display = "none";
-}
-
-// fuction that populates the quiz card
-var gindex = 0;
-function codeQuiz() {
-
-  
-  // compare to the correct answer - wrong, take away 5 seconds
-  // display the next question - global indexer ++ - gindexer
-  // increment when you click these buttons. 
-  // event.target? 
-  // needs to call codequiz() again
-
-  var currentQuestion = questions[gindex].question;
-  questionDiv.innerHTML = currentQuestion;
-  var currentAns1 = questions[gindex].answers[0];
-  ans1.innerHTML = currentAns1
-  var currentAns2 = questions[gindex].answers[1];
-  ans2.innerHTML = currentAns2
-  var currentAns3 = questions[gindex].answers[2];
-  ans3.innerHTML = currentAns3
-  var currentAns4 = questions[gindex].answers[3];
-  ans4.innerHTML = currentAns4
-
-  ans1.addEventListener("click", function () {
-    console.log((this).textContent);
-
-    if ((this).textContent == questions[gindex].correctAnswer) {
-      nextQuestion();
-    }
-    else {
-      timeLeft -= 5;
-      nextQuestion();
-      console.log("else");
-    }
-  });
-
-  ans2.addEventListener("click", function () {
-    console.log((this).textContent);
-
-    if ((this).textContent == questions[gindex].correctAnswer) {
-      nextQuestion();
-    }
-    else {
-      timeLeft -= 5;
-      nextQuestion();
-    }
-  });
-
-  ans3.addEventListener("click", function () {
-    console.log((this).textContent);
-
-    if ((this).textContent == questions[gindex].correctAnswer) {
-      nextQuestion();
-    }
-    else {
-      timeLeft -= 5;
-      nextQuestion();
-    }
-  });
-  ans4.addEventListener("click", function () {
-    console.log((this).textContent);
-
-    if ((this).textContent == questions[gindex].correctAnswer) {
-      nextQuestion();
-    }
-    else {
-      timeLeft -= 5;
-      nextQuestion();
-    }
-  });
-
-
-  console.log("gindex: " + gindex);
-}
-
-function nextQuestion() {
-  gindex++;
-  codeQuiz();
-  console.log("next question called");
-}
-
-
-// clearTimeout() <- to stop timer
-
-// store score in local storage 
-
-
-// High scores initial input
-var initialInput = document.getElementById("initials");
-initialInput.style.display = "none";
-
-// questions 1-3 attributed to geeksforgeeks, questions 4-6 attributed to tutorialspoint.com, I came up with 7, you're welcome
+var count = 0
 
 var questions = [
   {
@@ -198,7 +84,7 @@ var questions = [
       "script",
       "javascripts",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "<script>",
   },
   {
     question: "Which of the following is the correct syntax to display the text \"I'm tired.\" in an alert box?",
@@ -258,9 +144,127 @@ var questions = [
       "CamelCase",
       "PonyType",
     ],
-    correctAnswer: "<script>"
+    correctAnswer: "<script>",
   },
 ]
 
 
+
+//  initially hides card
+card.style.display = "none";
+
+// fuction to display the Quiz card on click
+function displayCard() {
+  console.log("Displaycard function ran");
+  // once the start button is clicked, sets the card to its initial state
+  if (card.style.display === "none") {
+    card.style.display = "initial";
+  }
+  // if start button is clicked again, will rehide the card
+  else {
+    card.style.display = "none";
+  }
+}
+
+// hides welcome screen
+function hideWelcome() {
+  welcomeBanner.style.display = "none";
+}
+
+
+// fuction that populates the quiz card
+
+function codeQuiz(count) {
+
+
+  // compare to the correct answer - wrong, take away 5 seconds
+  // display the next question - global indexer ++ - gindexer
+  // increment when you click these buttons. 
+  // event.target? 
+  // needs to call codequiz() again
+  var currentQuestion = questions[count].question;
+  questionDiv.innerHTML = currentQuestion;
+  var currentAns1 = questions[count].answers[0];
+  ans1.innerHTML = currentAns1
+  var currentAns2 = questions[count].answers[1];
+  ans2.innerHTML = currentAns2
+  var currentAns3 = questions[count].answers[2];
+  ans3.innerHTML = currentAns3
+  var currentAns4 = questions[count].answers[3];
+  ans4.innerHTML = currentAns4
+
+
+  ans1.addEventListener("click", function () {
+    console.log(typeof (this).textContent);
+
+    if ((this).textContent == questions[count].correctAnswer) {
+      nextQuestion();
+    }
+    else {
+      timeLeft -= 5;
+      nextQuestion();
+      console.log("else");
+    }
+  });
+
+  ans2.addEventListener("click", function () {
+    console.log((this).textContent);
+
+    if ((this).textContent == questions[count].correctAnswer) {
+      nextQuestion();
+    }
+    else {
+      timeLeft -= 5;
+      nextQuestion();
+    }
+  });
+
+  ans3.addEventListener("click", function () {
+    console.log((this).textContent);
+
+    if ((this).textContent === questions[count].correctAnswer) {
+      nextQuestion();
+    }
+    else {
+      timeLeft -= 5;
+      nextQuestion();
+    }
+  });
+  ans4.addEventListener("click", function () {
+    console.log((this).textContent);
+
+    if ((this).textContent === questions[count].correctAnswer) {
+      nextQuestion();
+    }
+    else {
+      timeLeft -= 5;
+      nextQuestion();
+    }
+  });
+}
+
+
+
+function nextQuestion() {
+  
+  console.log("next question called");
+  count++
+  codeQuiz(count);
+}
+
+
+// clearTimeout() <- to stop timer
+
+// store score in local storage 
+
+
+// High scores initial input
+var initialInput = document.getElementById("initials");
+initialInput.style.display = "none";
+
+// questions 1-3 attributed to geeksforgeeks, questions 4-6 attributed to tutorialspoint.com, I came up with 7, you're welcome
+
+
+
+console.log(typeof questions[0].question)
 // get question to display on page 
